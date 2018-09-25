@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  */
 public class Datei extends File {
 
-    private static final SimpleDateFormat SDF = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
     private String displayName;
 
     public Datei(String filepath, String displayname) {
@@ -34,7 +34,7 @@ public class Datei extends File {
                 if (f.canExecute()) {
                     rwx += "X";
                 }
-                displayName = String.format("%-25s %30s %5s", displayname, SDF.format(lastModified()), rwx);
+                displayName = String.format("%-25s %30s %5s", displayname, sdf.format(lastModified()), rwx);
             } else {
                 displayName = displayname;
             }
